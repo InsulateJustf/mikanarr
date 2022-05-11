@@ -1,5 +1,5 @@
 import { Button, Grid, InputAdornment } from "@mui/material";
-import makeStyles from '@mui/styles/makeStyles';
+import { makeStyles } from '@mui/styles';
 import axios from "axios";
 import clsx from "clsx";
 import * as _ from "lodash";
@@ -235,15 +235,15 @@ const PatternEdit = (props) => {
   const series = useSeries();
   const choices = useMemo(
     () =>
-      series.map(({ title }) => ({
-        id: title,
-        name: title,
-      })),
+    series.map(({ title }) => ({
+      id: title,
+      name: title,
+    })),
     [series]
-  );
-
-  return (
-    <BusProvider>
+    );
+    
+    return (
+      <BusProvider>
       <Edit {...props} aside={<Aside />}>
         <SimpleForm>
           <TextInput disabled source="id" />
@@ -251,6 +251,7 @@ const PatternEdit = (props) => {
           <PatternInput />
           <AutocompleteInput fullWidth source="series" choices={choices} />
           <SeasonsInput series={series} />
+          <TextInput source="offset" />
           <TextInput source="language" />
           <TextInput source="quality" />
         </SimpleForm>

@@ -7,7 +7,7 @@ import {
   CircularProgress,
   Typography,
 } from "@mui/material";
-import makeStyles from '@mui/styles/makeStyles';
+import { makeStyles } from '@mui/styles';
 import axios from "axios";
 import _ from "lodash";
 import { useNotify } from "ra-core";
